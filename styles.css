@@ -417,19 +417,23 @@ p{ max-width:62ch; }
 /* ============================================================
    OFF HOURS
    ============================================================ */
-.hobbies{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(14px,2vw,20px); align-items:start; }
+.hobbies{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(14px,2vw,20px); align-items:stretch; }
 @media (max-width:900px){ .hobbies{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:560px){ .hobbies{ grid-template-columns:1fr; } }
 .hob{
   border:3px solid var(--bone); padding:18px 20px 22px;
   background:rgba(0,0,0,.25);
+  display:flex; flex-direction:column; height:100%;
 }
 .hob h3{ font-size:1.3rem; letter-spacing:.08em; }
 .hob p{ margin:8px 0 0; font-size:1rem; }
 .hob ul{ margin:10px 0 0; padding-left:20px; font-weight:600; }
 .hob li{ margin:3px 0; }
 .hob li::marker{ color:var(--blood); }
-.hob .row{ display:flex; gap:8px; align-items:center; margin-top:12px; }
+.hob ul.two{ columns:2; column-gap:18px; }
+.hob ul.two li{ break-inside:avoid; }
+@media (max-width:420px){ .hob ul.two{ columns:1; } }
+.hob .row{ display:flex; gap:8px; align-items:center; margin-top:auto; padding-top:16px; }
 .pip{ width:14px; height:14px; background:var(--bone); clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); opacity:.25; }
 .pip.on{ opacity:1; background:var(--gold); }
 
